@@ -10,3 +10,13 @@
 ul li {
   list-style-type: square;
 }
+
+.card {
+  background-color: antiquewhite;
+  text-align: center;
+  border: 2px solid black;
+  margin: 20px;
+  box-sizing: border-box;
+  width: 300px;
+  margin: 20px auto;
+}
