@@ -1,31 +1,45 @@
 import { useState } from "react";
+
+const peopleArr = [
+  {
+    firstName: "Joe",
+    lastName: "Smith",
+    age: 28,
+    hairColor: "blonde",
+  },
+  {
+    firstName: "Matilda",
+    lastName: "Jones",
+    age: 33,
+    hairColor: "brown",
+  },
+  {
+    firstName: "Jane",
+    lastName: "Johnson",
+    age: 34,
+    hairColor: "blonde",
+  },
+  {
+    firstName: "Hal",
+    lastName: "Moore",
+    age: 90,
+    hairColor: "grey",
+  },
+];
+
 const CardSection = () => {
   return (
     <>
-      <PersonCard
-        firstName="Doe"
-        lastName="Jane"
-        age={32}
-        hairColor={"Black"}
-      />
-      <PersonCard
-        firstName={"Smith"}
-        lastName={"John"}
-        age={43}
-        hairColor={"Brown"}
-      />
-      <PersonCard
-        firstName={"FillMore"}
-        lastName={"Millard"}
-        age={89}
-        hairColor={"White"}
-      />
-      <PersonCard
-        firstName={"Veda"}
-        lastName={"Mata"}
-        age={27}
-        hairColor={"Black"}
-      />
+      {peopleArr.map((obj, index) => (
+        <PersonCard
+          key={index}
+          firstName={obj.firstName}
+          lastName={obj.lastName}
+          age={obj.age}
+          hairColor={obj.hairColor}
+        ></PersonCard>
+      ))}
+      {/* {["a", "b", "c"]} equivalent to this */}
     </>
   );
 };

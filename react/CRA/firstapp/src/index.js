@@ -4,16 +4,10 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-const comment = {
-  date: new Date(),
-  text: "I hope you enjoy learning React!",
-  author: {
-    name: "Hello Kitty",
-    avatarUrl: "http://placekitten.com/g/64/64",
-  },
-};
 ReactDOM.render(
-  <App date={comment.date} text={comment.text} author={comment.author} />,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById("root")
 );
 
