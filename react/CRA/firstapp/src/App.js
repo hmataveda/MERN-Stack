@@ -6,9 +6,9 @@ import Myform from "./Components/myForm";
 function App(props) {
   return (
     <div className="app">
+      <Myform />
       <IntroSection />
       <CardSection />
-      <Myform />
     </div>
   );
 }

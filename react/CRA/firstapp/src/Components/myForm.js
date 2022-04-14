@@ -82,7 +82,7 @@ const Myform = () => {
             onChange={handleValidations}
             value={fname}
           />
-          {fnerr ? <p>{fnerr} </p> : ""}
+          {fnerr && <p>{fnerr}</p>}
         </div>
         <div>
           <label htmlFor="lname">Last Name</label>
@@ -93,7 +93,7 @@ const Myform = () => {
             onInput={handleValidations}
             value={lname}
           />
-          {lnerr ? <p>{lnerr}</p> : ""}
+          {lnerr && <p>{lnerr}</p>}
         </div>
         <div>
           <label htmlFor="email">Email</label>
@@ -104,7 +104,7 @@ const Myform = () => {
             onChange={handleValidations}
             value={email}
           />
-          {Emerr ? <p>{Emerr} </p> : ""}
+          {Emerr && <p>{Emerr} </p>}
         </div>
         <div>
           <label htmlFor="pswd">Password</label>
@@ -115,7 +115,7 @@ const Myform = () => {
             value={pswd}
             onChange={handleValidations}
           />
-          {Pswderr ? <p>{Pswderr} </p> : ""}
+          {Pswderr && <p>{Pswderr} </p>}
         </div>
         <div>
           <label htmlFor="cPswd">Confirm Password</label>
@@ -126,21 +126,21 @@ const Myform = () => {
             value={cpswd}
             onChange={handleValidations}
           />
-          {Cpswderr ? <p>{Cpswderr}</p> : ""}
+          {Cpswderr && <p>{Cpswderr}</p>}
         </div>
-        {fnerr ||
-        lnerr ||
-        Emerr ||
-        Pswderr ||
-        Cpswderr ||
-        !fname ||
-        !lname ||
-        !email ||
-        !pswd ||
-        !cpswd ? (
-          <button disabled>Submit</button>
+        {fname &&
+        lname &&
+        email &&
+        pswd &&
+        cpswd &&
+        !fnerr &&
+        !lnerr &&
+        !Emerr &&
+        !Pswderr &&
+        !Cpswderr ? (
+          <button>Submit</button>
         ) : (
-          <input type="submit" value="Submit" />
+          <button disabled>Submit</button>
         )}
       </form>
 
