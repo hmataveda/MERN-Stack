@@ -1,0 +1,64 @@
+.App {
+  text-align: center;
+}
+h2 {
+  color: aqua;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.section {
+  margin: 0 30px;
+  border: 2px solid aquamarine;
+}
+input,
+input:focus {
+  border: 2px solid rgb(73, 219, 219);
+  outline: none;
+}
+legend {
+  color: rgb(166, 16, 41);
+}
+/* ************************************************************************************ */
+
+.box {
+  border-radius: 10px;
+  margin: 30px;
+}
+.boxes {
+  display: flex;
+  justify-content: center;
+}
+
+.color-form {
+  display: flex;
+  justify-content: center;
+}
+.color-form div {
+  margin: 20px;
+}
+.color-form div > label {
+  color: rgb(18, 65, 64);
+  font-size: 25px;
+  font-weight: 500;
+  vertical-align: top;
+}
+.color-form div > input {
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  margin-left: 5px;
+  border: 0ch;
+  background-color: aliceblue;
+  text-align: center;
+}
+.color-form div > button {
+  height: 30px;
+  width: 100px;
+  background-color: rgba(127, 255, 212, 0.429);
+  border: 0ch;
+  border-radius: 10px;
+  vertical-align: top;
+}
