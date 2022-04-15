@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+.app {
+  /* height: 100vh; */
+  background-color: antiquewhite;
+}
+header {
+  height: 100px;
+}
+main > div {
+  height: 440px;
+}
+
+nav div {
+  height: 350px;
+  background-color: rgba(26, 136, 226, 0.381);
+}
+
+section div {
+  height: 300px;
+}
+
+footer {
+  height: 90px;
+  background-color: rgb(141, 150, 222);
+}
