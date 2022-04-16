@@ -1,10 +1,12 @@
 import "./App.css";
-import Mainpage from "./Components/PlottingReact/MainPage";
+import MainTabsPage from "./Components/Tabs/MainPage";
+import PlottingBlocks from "./Components/PlottingReact/MainPage";
 
 function App() {
   return (
     <div>
-      <Mainpage></Mainpage>
+      <MainTabsPage></MainTabsPage>
+      <PlottingBlocks></PlottingBlocks>
     </div>
   );
 }
