@@ -1,13 +1,6 @@
 import { useState, useEffect } from "react";
 
 const DisplayTodos = (props) => {
-  // const [todos, setTodos] = useState(props.todos);
-
-  // useEffect(() => {
-  //   console.log("coming here", todos);
-  //   setTodos(props.todos);
-  // }, [props]);
-
   const handleCheckBox = (e, id) => {
     console.log(e.target.checked + "dd" + id);
     props.getCheckedId(id);

@@ -5,7 +5,6 @@ const InputForm = (props) => {
     setTodo({
       value: e.target.value,
       completed: false,
-      id: todo.id + 1,
     });
   };
   const handleSubmit = (e) => {

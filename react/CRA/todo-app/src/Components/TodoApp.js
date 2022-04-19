@@ -22,12 +22,12 @@ const TodoApp = () => {
   ];
 
   const storedTodoList = JSON.parse(localStorage.getItem("todolists"));
-
   const [todos, setTodos] = useState(storedTodoList || initialTodos);
-  const [count, setCount] = useState(4);
+  const [count, setCount] = useState(localStorage.getItem("counts") || 4);
 
   useEffect(() => {
     localStorage.setItem("todolists", JSON.stringify(todos));
+    localStorage.setItem("counts", count);
   }, [todos]);
 
   const getSingleTodo = (singleTodo) => {
