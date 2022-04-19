@@ -1,0 +1,16 @@
+h1 {
+  text-align: center;
+  color: aqua;
+}
+.mainPage {
+  display: flex;
+  justify-content: center;
+}
+.mainPage div {
+  color: blue;
+  text-align: center;
+}
+
+div h2 {
+  color: rgb(219, 21, 70);
+}
