@@ -1,4 +1,5 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 import { useState, useEffect } from "react";
 import People from "./People";
 import Planets from "./Planets";
@@ -13,15 +14,16 @@ const Swapi = () => {
   const buttonNavigate = useNavigate();
 
   useEffect(() => {
-    fetch(`https://swapi.dev/api/${name}/${id}/`)
-      .then((res) => res.json())
+    axios
+      .get(`https://swapi.dev/api/${name}/${id}/`)
+      // .then((res) => res.json())
       .then((res) => {
         seterr(false);
-        // console.log(res);
-        setDatas(res);
+        console.log("here in res", res);
+        setDatas(res.data);
       })
       .catch((err) => {
-        // console.log("this is the error", err);
+        console.log("this is the error", err);
         return seterr(true);
       });
   }, [name, id]);
@@ -29,14 +31,15 @@ const Swapi = () => {
   useEffect(() => {
     if (name == "people") {
       getHomeworldID(data.homeworld);
-      fetch(`${data.homeworld}`)
-        .then((res) => res.json())
+      axios
+        .get(`${data.homeworld}`)
+        // .then((res) => res.json())
         .then((res) => {
           console.log(res);
-          setHomeworld(res.name);
+          setHomeworld(res.data.name);
         })
         .catch((err) => {
-          console.log(err);
+          console.log("UNIQUEEE", err);
           return seterr(true);
         });
     }
