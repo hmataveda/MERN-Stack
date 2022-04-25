@@ -13,7 +13,7 @@ const InputForm = (props) => {
     setTodo({ value: "", completed: "" });
   };
   return (
-    <div className="">
+    <div className="form">
       <form action="" onSubmit={handleSubmit}>
         <input
           type="text"

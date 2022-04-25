@@ -11,8 +11,8 @@ const DisplayTodos = (props) => {
   };
   const finalTodos = props.todos.map((todo, idx) => {
     return (
-      <div key={idx}>
-        <div>
+      <div key={idx} className="list">
+        <div className="names">
           <span
             className={`${todo.completed && "text-decoration-line-through"} `}
           >
@@ -26,13 +26,13 @@ const DisplayTodos = (props) => {
             }}
           />
         </div>
-        <div>
+        <div className="delete">
           <button
             onClick={(e) => {
               handleDelete(e, todo.id);
             }}
           >
-            Delete
+            <i className="bi bi-trash-fill"></i>
           </button>
         </div>
       </div>

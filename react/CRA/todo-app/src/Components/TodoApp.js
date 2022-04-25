@@ -10,12 +10,12 @@ const TodoApp = () => {
     },
     {
       value: "Drink stromng coffee",
-      completed: true,
+      completed: false,
       id: 2,
     },
 
     {
-      value: "fresh smoothie",
+      value: "Fresh Smoothie",
       completed: false,
       id: 3,
     },
@@ -56,7 +56,8 @@ const TodoApp = () => {
   };
 
   return (
-    <div>
+    <div className="mainPage">
+      <h1>Todo Lists App</h1>
       <InputForm getSingleTodo={getSingleTodo}></InputForm>
       <DisplayTodos
         todos={todos}

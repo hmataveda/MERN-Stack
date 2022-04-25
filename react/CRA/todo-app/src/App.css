@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+* {
+  font-family: cursive;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-family: cursive;
+  color: rgb(201, 88, 141);
+  margin-bottom: 40px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mainPage {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+  /* background-color: antiquewhite; */
+  height: 100vh;
+  background-image: url("https://image.shutterstock.com/image-photo/flay-lay-top-view-office-260nw-1357683335.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.form {
+  width: 700px;
+  /* background-color: antiquewhite; */
+  /* margin-bottom: 10px; */
+}
+
+.form input[type="text"] {
+  border: 3px solid rgba(86, 35, 35, 0.482);
+  width: 300px;
+  height: 50px;
+  margin: 20px;
+  margin-left: 200px;
+  padding: 0 20px;
+  border-radius: 10px;
+}
+.form input[type="submit"] {
+  width: 70px;
+  color: black;
+  border: 2px solid rgb(233, 175, 175);
+  border-radius: 10px;
+}
+
+.list {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 500px;
+  /* background-color: aqua; */
+  margin: 30px;
 }
-
-.App-link {
-  color: #61dafb;
+.names {
+  width: 250px;
+  text-align: center;
+  font-size: large;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.names input {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.delete button {
+  border: 0ch;
+  background-color: transparent;
+  color: rgb(50, 17, 17);
+  margin-left: 20px;
+  font-size: large;
 }
