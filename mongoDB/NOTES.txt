@@ -1,0 +1,61 @@
+how to to server Side
+
+in terminal
+1. do npm i -y for package.json file
+2. create server.js file
+3. npm in express and mongoose
+4. in serverjs file
+    1. first do express connections
+    const express = require("express");
+    const app = express();
+const PORT = 8000;
+app.use(express.json(), express.urlencoded({ extended: true })); // body parser
+
+app.listen(PORT, () => {
+  console.log("your port is running in 8000!!! hurraaaaaaaaayyyyy");
+});
+
+2. then do mongoose connection to js
+
+mongoose
+  .connect("mongodb://localhost:27017/myapp", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log(
+      "Mongoose connection is established with mongooose!!!!!!!! great"
+    );
+  })
+  .catch((err) => {
+    console.log("Something went wrong when connecting to the database ", err);
+  });
+
+
+3. then do Schema and models
+
+const StudentSchema = mongoose.Schema({
+  name: {
+    type: String,
+  },
+  age: {
+    type: Number,
+  },
+  class: {
+    type: String,
+  },
+});
+
+const Student = mongoose.model("Student", StudentSchema);
+
+4. then connect the routes through express and do the queries through schema models
+
+    ex: app.get("/api/students", (req, res) => {
+  Student.find()
+    .then((result) => {
+      res.json({ studebdjnsknts: result });
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
