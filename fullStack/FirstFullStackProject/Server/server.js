@@ -1,7 +1,7 @@
 const express = require("express");
 require("./Config/mongoose.config");
 const PersonRoutes = require("./Routes/person.routes");
-const ProjectManagerRoutes = require("./Routes/productManager.routes");
+const ProductRoutes = require("./Routes/product.routes");
 const cors = require("cors");
 const app = express();
 
@@ -13,4 +13,4 @@ app.listen(8000, () => {
 });
 
 PersonRoutes(app);
-ProjectManagerRoutes(app);
+ProductRoutes(app);

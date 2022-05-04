@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-const ProductManagerForm = () => {
+const CreateProductForm = () => {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
@@ -8,7 +8,7 @@ const ProductManagerForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/productManager", {
+      .post("http://localhost:8000/api/product", {
         title,
         price,
         description,
@@ -82,4 +82,4 @@ const ProductManagerForm = () => {
   );
 };
 
-export default ProductManagerForm;
+export default CreateProductForm;

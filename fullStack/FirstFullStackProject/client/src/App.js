@@ -1,10 +1,10 @@
 import "./App.css";
-import ProductManagerForm from "./Components/ProductManagerForm";
+import CreateProductForm from "./Components/CreateProductForm";
 
 function App() {
   return (
     <div className="App">
-      <ProductManagerForm></ProductManagerForm>
+      <CreateProductForm></CreateProductForm>
     </div>
   );
 }
