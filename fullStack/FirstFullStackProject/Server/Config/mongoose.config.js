@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://localhost/projectManager", {
+  .connect("mongodb://localhost/people_db", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

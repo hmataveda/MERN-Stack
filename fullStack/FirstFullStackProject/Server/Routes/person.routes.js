@@ -6,7 +6,9 @@ const PersonController = require("../Controllers/person.controller");
 // module.exports = personRoutes;
 
 module.exports = (app) => {
-  app.get("/", PersonController.index);
-  app.post("/api/people", PersonController.CreatePerson);
-  app.get("/api/people", PersonController.GetPeople);
+  app.post("/api/person", PersonController.CreatePerson);
+  app.get("/api/people", PersonController.GetAllPeople);
+  app.get("/api/person/:id", PersonController.GetPerson);
+  app.put("/api/person/:id", PersonController.UpdatePerson);
+  app.delete("/api/person/:id", PersonController.DeletePerson);
 };

@@ -13,4 +13,4 @@ app.listen(8000, () => {
 });
 
 PersonRoutes(app);
-ProductRoutes(app);
+// ProductRoutes(app);

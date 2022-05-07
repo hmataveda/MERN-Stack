@@ -4,6 +4,7 @@ const PersonSchema = mongoose.Schema(
   {
     firstName: { type: String },
     lastName: { type: String },
+    avatar: { type: String },
   },
   { timeStamp: true }
 );
