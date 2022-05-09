@@ -21,4 +21,26 @@ const GetallPoducts = (request, response) => {
       response.status(500).json(err);
     });
 };
-module.exports = { CreateProduct, GetallPoducts };
+
+const DeleteOne = (request, response) => {
+  Product.findByIdAndDelete({ _id: request.params.id })
+    .then((result) => {
+      response.status(201).json(result);
+    })
+    .catch((err) => {
+      response.status(500).json(err);
+    });
+};
+
+const UpdateOne = (request, response) => {
+  Product.findByIdAndUpdate({ _id: request.params.id }, request.body, {
+    new: true,
+  })
+    .then((result) => {
+      response.status(201).json(result);
+    })
+    .catch((err) => {
+      response.status(500).json(err);
+    });
+};
+module.exports = { CreateProduct, GetallPoducts, DeleteOne, UpdateOne };

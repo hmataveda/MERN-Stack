@@ -10,10 +10,13 @@ const ProductCreateForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/product", { title })
+      .post("http://localhost:8000/api/product", { title, price, description })
       .then((res) => {
         console.log("in form", res.data);
         setProducts([...products, res.data]);
+        setTitle("");
+        setPrice("");
+        setDescription("");
       })
       .catch((err) => console.log(err));
   };
