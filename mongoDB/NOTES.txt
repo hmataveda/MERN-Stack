@@ -3,7 +3,7 @@ how to to server Side
 in terminal
 1. do npm i -y for package.json file
 2. create server.js file
-3. npm in express and mongoose
+3. npm in express and mongoose , cors
 4. in serverjs file
     1. first do express connections
     const express = require("express");
@@ -59,3 +59,12 @@ const Student = mongoose.model("Student", StudentSchema);
       res.json(err);
     });
 });
+
+
+Debug:
+*Make sure MongoDB server is running (use mongod command) 
+*Make sure post data matches the data being inserted into the database (ex: name, age, etc.)
+*Make sure that the form submits to a post request to /collectionNames
+*Make sure mongoose is actually installed
+*Check the order of everything related to mongoose (require → connect → Schema → Model → route)
+Use lots of console.log statements to follow the data
