@@ -24,7 +24,7 @@ const MovieSchema = new mongoose.Schema(
     },
     boxArt: {
       type: String,
-      required: [true, "Movie Pic is Required"],
+      // required: [true, "Movie Pic is Required"],
     },
     watchLength: {
       type: String,
@@ -44,6 +44,10 @@ const MovieSchema = new mongoose.Schema(
     releaseYear: {
       type: Number,
       min: [1920, "Nothing too Old"],
+    },
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
   },
   {

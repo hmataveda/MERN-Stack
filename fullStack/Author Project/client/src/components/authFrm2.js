@@ -3,11 +3,6 @@ import { Link, useNavigate, useLocation, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-// do we have to send whole state or only name and message
-// difference btwn put and patch
-// everytime it comes to home it fetches the data
-//where the cancel shoud point
-
 function Authform2() {
   const { id } = useParams();
   const navigate = useNavigate();

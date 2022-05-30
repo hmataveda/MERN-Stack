@@ -37,7 +37,7 @@ function AllAuthors() {
           <button
             onClick={() => {
               navigate(`/edit/${author._id}`, {
-                state: { name: author.name, book: author.book },
+                state: { name: author.name, book: author.book }, // sending data as state
               });
             }}
           >

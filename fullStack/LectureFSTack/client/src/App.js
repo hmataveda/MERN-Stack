@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import NewMovie from "./component/newMovie";
+import MovieList from "./component/movieList";
+import Header from "./component/Header";
+import Movie from "./component/Movie";
+import UpdateMovie from "./component/UpdateMovie";
+import Login from "./component/Authentication/Login";
+import Register from "./component/Authentication/Register";
+import Profile from "./component/profile";
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+      <Routes>
+        <Route path="/" element={<Navigate to="/app"></Navigate>} />
+        <Route path="/app" element={<MovieList />} />
+        <Route path="/new" element={<NewMovie />} />
+        <Route path="/movie/:id" element={<Movie />} />
+        <Route path="/movie/edit/:id" element={<UpdateMovie />} />
+        <Route path="/login" element={<Login setLoggedIn={setLoggedIn} />} />
+        <Route
+          path="/register"
+          element={<Register setLoggedIn={setLoggedIn} />}
+        />
+        <Route path="/profile/:createrName" element={<Profile />}></Route>
+      </Routes>
     </div>
   );
 }

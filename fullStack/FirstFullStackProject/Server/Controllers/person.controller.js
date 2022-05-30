@@ -31,6 +31,7 @@ const GetPerson = (request, response) => {
 };
 
 const DeletePerson = (request, response) => {
+  console.log(request.params.id);
   Person.findByIdAndDelete(request.params.id)
     .then((result) => {
       response.status(201).json(result);

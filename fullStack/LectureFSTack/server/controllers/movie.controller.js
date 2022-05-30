@@ -1,8 +1,13 @@
 const Movie = require("../models/movie.model");
+const User = require("../models/user.model");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
+const SECRET = process.env.JWT_SECRET;
 
 module.exports = {
   getMovies: (req, res) => {
     Movie.find({})
+      .populate("createdBy", "username email")
       .then((allmovie) => {
         res.json(allmovie);
       })
@@ -13,7 +18,8 @@ module.exports = {
       });
   },
   createMovie: (req, res) => {
-    Movie.create(req.body)
+    const user = jwt.verify(req.cookies.userToken, SECRET);
+    Movie.create({ ...req.body, createdBy: user._id })
       .then((newMovie) => {
         res.status(201).json(newMovie);
       })
@@ -26,6 +32,7 @@ module.exports = {
 
   getMovieById: (req, res) => {
     Movie.findOne({ _id: req.params.id })
+      .populate("createdBy", "username email")
       .then((onemovie) => {
         res.json(onemovie);
       })
@@ -41,13 +48,14 @@ module.exports = {
         res.json(onemovie);
       })
       .catch((err) => {
-        res
-          .status(500)
-          .json({ message: "Something went wrong in Delete one", error: err });
+        res.status(500).json({
+          message: "Something went wrong in Delete one",
+          error: err,
+        });
       });
   },
   updtaMovie: (req, res) => {
-    Movie.updateOne({ _id: req.params.id }, req.body, {
+    Movie.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true,
     })
@@ -55,9 +63,27 @@ module.exports = {
         res.json(onemovie);
       })
       .catch((err) => {
-        res
-          .status(500)
-          .json({ message: "Something went wrong in Update one", error: err });
+        res.status(500).json({
+          message: "Something went wrong in Update one",
+          error: err,
+        });
+      });
+  },
+
+  moviebyuser: (req, res) => {
+    // console.log("coming innn", req.params.creatorName);
+    User.findOne({ username: req.params.creatorName })
+      .then((creator) => {
+        const creatorId = creator._id;
+        console.log("creator details", creatorId);
+        Movie.find({ createdBy: creatorId }).then((movies) => {
+          console.log("all movies by user", movies);
+          res.json(movies);
+        });
+      })
+      .catch((err) => {
+        console.log("err while filteriing the movies by user", err);
+        res.json(err);
       });
   },
 };
